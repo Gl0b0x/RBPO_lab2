@@ -28,24 +28,25 @@ double RBPO::Lab2::Variant13::Task2::f3(int n)
 {
 	double sum = 0;
 	int i = 0;
-	do {
+	while (i <= n)
+	{
 		sum += a(i);
 		i++;
-	} while (i <= n);
+	}
 	return sum;
 }
 double RBPO::Lab2::Variant13::Task2::f4(double epsilon)
 {
 	double pred = 0;
 	double now = a(0);
-	double sum = pred+now;
+	double sum = pred + now;
 	int i = 1;
-	do {
+	while (fabs(now - pred) > epsilon)
+	{
 		pred = now;
 		now = a(i);
 		sum += now;
 		i++;
-	} 
-	while (fabs(now - pred) > epsilon);
+	}
 	return sum;
 }
